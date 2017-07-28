@@ -9,14 +9,13 @@
     foreach($table->find('tr') as $tableRow) {
         $titleCol = $tableRow->find('.titleColumn', 0) -> plaintext;
         $cutIndex = strpos($titleCol, '.');
-        $ranking = substr($titleCol, 0, $cutIndex + 1);
+        $ranking = substr($titleCol, 0, $cutIndex);
         $titleCol = substr($titleCol, $cutIndex + 1);
         $cutIndex = strrpos($titleCol, '(');
         $title = substr($titleCol, 0, $cutIndex);
         $titleCol = substr($titleCol, $cutIndex);
         $year = substr($titleCol, 1, 4);
         $rating = $tableRow->find('.ratingColumn', 0)->find('strong', 0)->innertext;
-        //echo $ranking + "    " + $title + " - " + $year + " " +$rating +"/10";
         $row['title'] = $title;
         $row['rating'] = $rating;
         $row['ranking'] = $ranking;
