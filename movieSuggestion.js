@@ -26,6 +26,16 @@ var Movies = {
         var index = Math.floor(Math.random() * Movies.movieList.length);
         var movie = Movies.movieList[index];
         Movies.movieList.splice(index, 1);
+        $.ajax({
+            type:"get",
+            url:"movieDetailsScrapper.php",
+            data: {
+                "desc": movie.desc    
+            },
+            success: function(data) {
+                movie.description = data;
+            }
+        });
         return movie;
     },
     loadTemplate: function(movie){
