@@ -9,16 +9,28 @@
 </head>
 
 <body style="background-color:#800000;">
-    <div style="width:80%; max-width:500px;height:250px; margin: 0 auto; margin-top: calc(50vh - 125px); background-color: #3399ff; border-radius:3px; position: relative;">
-        <div id= "number" style="color: white; position: absolute; top: 10px; width: 50px; left:5px; font-size:24px; height:38px; line-height: 38px;"></div>
-        
-        <div id= "name" style="position: absolute; width:70%; min-height:38px;top:30px; left:15%; color: white; font-size: 38px; line-height:38px; text-align: center;"></div>
-        <div id= "rating" style="color: white; position: absolute; top: 10px; width: 100px; text-align: right; right:5px; font-size:24px; height:38px; line-height: 38px;"></div>
-        <div id= "year" style="position: absolute; width:100%; height:24px; top:150px; color: white; font-size: 24px; text-align: center;"></div>
-        <div id= "generateNew" style="width:50%; min-width: 250px; height:40px; position: absolute; left: 25%; bottom: 10px; border-radius: 10px; background-color: #00e600; line-height:40px; color: white; font-size: 28px; text-align: center; cursor: pointer;">Generate Suggestion</div>
+    <h2 style="color:white; text-align:center; font-size:30px; line-height:30px;">IMBD Movie Suggestor</h2>
+    <h5 style="color:white; text-align:center; font-size:18px; line-height:20px;">Using IMBD's top 250 best movie's list, I will provide you a random movie suggestion using information found on IMBD's site, scrapped right now in order to stay current.</h5>
+    <div style="width:80%; max-width:500px;height:250px; margin: 0 auto; margin-top: calc(50vh - 125px - 50px); background-color: #d5c67a; border-radius:3px; position: relative;">    
+        <div id= "name" style="position: absolute; width:70%; min-height:38px;top:30px; left:15%; color: black; font-size: 38px; line-height:38px; text-align: center;"></div>
+        <div id= "number" style="color: black; position: absolute; top: 10px; width: 50px; left:25px; font-size:24px; height:38px; line-height: 38px;"></div>
+        <div id="viewDetails" style="position: absolute; width: 30px; height: 30px; background-color:rgba(128, 128, 128, .3);  cursor: pointer; top: 10px; right:10px; font-size: 20px; line-height:30px; border-radius:10px; text-align: center; visibility:hidden;">?</div>
+        <div id= "year" style="position: absolute; width:100%; height:24px; top:150px; color: black; font-size: 24px; text-align: center;"></div>
+        <div id= "generateNew" style="width:50%; min-width: 250px; height:40px; box-shadow: black 0 2px 1px 0; position: absolute; left: 25%; bottom: 10px; border-radius: 10px; background-color: #2eb846; line-height:40px; color: white; font-size: 28px; text-align: center; cursor: pointer;">Generate Suggestion</div>
     </div>
     
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
     <script src="movieSuggestion.js"></script>
+    <script type="text/template" id="details">
+        <div style="background-color: white; width:400px;padding:30px; border-radius:5px; box-sizing: border-box; height: 200px;">
+            <div style="width:100%; height: 100px; border-bottom:1px solid gray; padding-bottom: 10px; position:relative;">
+                <span id ="detailText" style-"text-align: center;"></span>
+            </div>
+            <div style="width:100%; height:70px; position:relative">
+                <div id="closeDetails" style="float: right; margin-right:10px; margin-top:20px; background-color: red; padding: 2.5px 5px; color: white; border-radius: 4px; cursor: pointer;" class="button">Close</div>
+                <div id= "rating" style="color: black; position: absolute; top: 20px; text-align: right; left:0px; font-size:24px; height:38px; line-height: 20px;"></div>
+            </div>
+        </div>
+    </script>
 </body>
     
